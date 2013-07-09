@@ -58,9 +58,9 @@ class PhoneNumberOfflineGeocoderTest : public testing::Test {
     US_NUMBER3(MakeNumber(1, 2128120000L)),
     US_NUMBER4(MakeNumber(1, 6174240000L)),
     US_INVALID_NUMBER(MakeNumber(1, 123456789L)),
-    BS_NUMBER1(MakeNumber(1, 2423651234L)),
+    BS_NUMBER1(MakeNumber(1, 2423651234UL)),
     AU_NUMBER(MakeNumber(61, 236618300L)),
-    NUMBER_WITH_INVALID_COUNTRY_CODE(MakeNumber(999, 2423651234L)),
+    NUMBER_WITH_INVALID_COUNTRY_CODE(MakeNumber(999, 2423651234UL)),
     INTERNATIONAL_TOLL_FREE(MakeNumber(800, 12345678L)) {
   }
 
