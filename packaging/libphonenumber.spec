@@ -1,0 +1,66 @@
+Name:           libphonenumber
+Version:        5.3.2
+Release:        1
+License:        Apache License 2.0
+Summary:        A library for parsing, formatting, storing and validating international phone numbers.
+Url:            http://code.google.com/p/libphonenumber/
+Group:          Development/Libraries/C and C++
+Source:         libphonenumber-%{version}.tgz
+BuildRequires:  gcc-c++
+BuildRequires:  cmake
+BuildRequires:  gtest-devel
+BuildRequires:  re2-devel
+BuildRequires:  protobuf-devel
+BuildRequires:  boost-devel
+BuildRequires:  pkgconfig(icu-i18n)
+
+%description
+Google's common Java, C++ and Javascript library for parsing,
+formatting, storing and validating international phone numbers. The
+Java version is optimized for running on smartphones, and is used by
+the Android framework since 4.0 (Ice Cream Sandwich).
+
+%package devel
+License:        Apache License 2.0
+Summary:        A library for parsing, formatting, storing and validating international phone numbers.
+Group:          Development/Libraries/C and C++
+Requires:       libphonenumber = %{version}
+Requires:       protobuf-devel
+
+%description devel
+Google's common Java, C++ and Javascript library for parsing,
+formatting, storing and validating international phone numbers. The
+Java version is optimized for running on smartphones, and is used by
+the Android framework since 4.0 (Ice Cream Sandwich).
+
+%prep
+%setup -q -n libphonenumber
+
+%build
+cmake -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=%{_prefix} cpp
+
+%{__make} %{?jobs:-j%jobs}
+
+%install
+%{__make} DESTDIR=%{buildroot} install
+rm %{buildroot}/%{_libdir}/*.a
+
+%post   -n libphonenumber -p /sbin/ldconfig
+
+%postun -n libphonenumber -p /sbin/ldconfig
+
+
+%files -n libphonenumber
+%defattr(-, root, root, -)
+%doc AUTHORS LICENSE
+%{_libdir}/libphonenumber.so.5
+%{_libdir}/libphonenumber.so.5.3
+%{_libdir}/libgeocoding.so.5
+%{_libdir}/libgeocoding.so.5.3
+
+%files devel
+%defattr(-, root, root, -)
+%{_includedir}/phonenumbers
+%{_includedir}/base
+%{_libdir}/libphonenumber.so
+%{_libdir}/libgeocoding.so
