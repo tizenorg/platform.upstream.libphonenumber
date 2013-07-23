@@ -1,10 +1,10 @@
 Name:           libphonenumber
 Version:        5.3.2
 Release:        1
-License:        Apache License 2.0
+License:        Apache-2.0
 Summary:        A library for parsing, formatting, storing and validating international phone numbers.
 Url:            http://code.google.com/p/libphonenumber/
-Group:          Development/Libraries/C and C++
+Group:          Social & Content/Libraries
 Source:         libphonenumber-%{version}.tgz
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
@@ -21,9 +21,8 @@ Java version is optimized for running on smartphones, and is used by
 the Android framework since 4.0 (Ice Cream Sandwich).
 
 %package devel
-License:        Apache License 2.0
 Summary:        A library for parsing, formatting, storing and validating international phone numbers.
-Group:          Development/Libraries/C and C++
+Group:          Social & Content/Libraries
 Requires:       libphonenumber = %{version}
 Requires:       protobuf-devel
 
@@ -52,7 +51,8 @@ rm %{buildroot}/%{_libdir}/*.a
 
 %files -n libphonenumber
 %defattr(-, root, root, -)
-%doc AUTHORS LICENSE
+%doc AUTHORS
+%license LICENSE
 %{_libdir}/libphonenumber.so.5
 %{_libdir}/libphonenumber.so.5.3
 %{_libdir}/libgeocoding.so.5
