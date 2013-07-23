@@ -1,3 +1,6 @@
+* Tue Jul 23 2013 Patrick Ohly <patrick.ohly@intel.com> submit/tizen/20130716.223846@73f39ae
+- Tizen compliant .spec file
+
 * Tue Jul 09 2013 Patrick Ohly <patrick.ohly@intel.com> 9afe5c8
 - initial packaging of 5.3.2
 - fix compiler warnings about signed/unsigned int constants
