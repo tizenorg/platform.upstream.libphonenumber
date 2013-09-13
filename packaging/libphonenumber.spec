@@ -2,7 +2,7 @@ Name:           libphonenumber
 Version:        5.3.2
 Release:        1
 License:        Apache-2.0
-Summary:        A library for parsing, formatting, storing and validating international phone numbers.
+Summary:        A library for manipulating international phone numbers
 Url:            http://code.google.com/p/libphonenumber/
 Group:          Social & Content/Libraries
 Source:         libphonenumber-%{version}.tgz
@@ -21,7 +21,7 @@ Java version is optimized for running on smartphones, and is used by
 the Android framework since 4.0 (Ice Cream Sandwich).
 
 %package devel
-Summary:        A library for parsing, formatting, storing and validating international phone numbers.
+Summary:        Devel package for library
 Group:          Social & Content/Libraries
 Requires:       libphonenumber = %{version}
 Requires:       protobuf-devel
