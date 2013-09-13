@@ -1,3 +1,9 @@
+* Fri Sep 13 20:38:13 UTC 2013 - tracy.graydon@intel.com
+- TIVI-1785: fix build failure on boost system
+- Fix rpmlint failure on "." in summaries
+- Fix rpmlint failure on file permissions on spec and .changes
+- Fix rpm link failure on length of summaries
+
 * Tue Jul 23 2013 Patrick Ohly <patrick.ohly@intel.com> submit/tizen/20130716.223846@73f39ae
 - Tizen compliant .spec file
 
