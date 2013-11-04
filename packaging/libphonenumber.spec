@@ -36,7 +36,11 @@ the Android framework since 4.0 (Ice Cream Sandwich).
 %setup -q -n libphonenumber
 
 %build
-cmake -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=%{_prefix} cpp
+%cmake \
+   -DBUILD_GEOCODER=OFF \
+   -DCMAKE_SKIP_RPATH=ON \
+   -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+   cpp
 
 %{__make} %{?jobs:-j%jobs}
 
@@ -55,12 +59,15 @@ rm %{buildroot}/%{_libdir}/*.a
 %license LICENSE
 %{_libdir}/libphonenumber.so.5
 %{_libdir}/libphonenumber.so.5.3
-%{_libdir}/libgeocoding.so.5
-%{_libdir}/libgeocoding.so.5.3
+
+# Needs to be packaged separately should compilation of it
+# get enabled with -DBUILD_GEOCODER=ON.
+# %{_libdir}/libgeocoding.so.5
+# %{_libdir}/libgeocoding.so.5.3
 
 %files devel
 %defattr(-, root, root, -)
 %{_includedir}/phonenumbers
 %{_includedir}/base
 %{_libdir}/libphonenumber.so
-%{_libdir}/libgeocoding.so
+# %{_libdir}/libgeocoding.so

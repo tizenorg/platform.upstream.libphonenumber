@@ -1,4 +1,7 @@
-* Fri Sep 13 20:38:13 UTC 2013 - tracy.graydon@intel.com
+* Mon Nov 04 2013 Patrick Ohly <patrick.ohly@intel.com> accepted/tizen/20130915.152958@86e5efa
+- disable libgeocoding
+
+* Fri Sep 12 20:38:13 UTC 2013 - tracy.graydon@intel.com
 - TIVI-1785: fix build failure on boost system
 - Fix rpmlint failure on "." in summaries
 - Fix rpmlint failure on file permissions on spec and .changes
