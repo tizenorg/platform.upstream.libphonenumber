@@ -38,7 +38,11 @@ the Android framework since 4.0 (Ice Cream Sandwich).
 %build
 cmake -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=%{_prefix} cpp
 
-%{__make} %{?jobs:-j%jobs}
+# Parallel builds are broken and/or not supported by upstream, don't
+# use them. The generated Makefile lacks the geocoding_data.cc ->
+# generate_geocoding_data dependency and thus code generator may still
+# be producing the file when the C++ compiler is already parsing it.
+%{__make}
 
 %install
 %{__make} DESTDIR=%{buildroot} install
