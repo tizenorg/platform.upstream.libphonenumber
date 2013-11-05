@@ -1,3 +1,6 @@
+* Tue Nov 05 2013 Patrick Ohly <patrick.ohly@intel.com> accepted/tizen/20130915.152958@ab8509e
+- disable parallel builds
+
 * Fri Sep 13 20:38:13 UTC 2013 - tracy.graydon@intel.com
 - TIVI-1785: fix build failure on boost system
 - Fix rpmlint failure on "." in summaries
