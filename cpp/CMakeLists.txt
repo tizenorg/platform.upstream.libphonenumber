@@ -324,7 +324,7 @@ if (${BUILD_GEOCODER} STREQUAL "ON")
   set_target_properties (geocoding-shared
     PROPERTIES
       OUTPUT_NAME "geocoding"
-      PREFIX "lib"
+      PREFIX ${LIB_INSTALL_DIR}
       SOVERSION ${libphonenumber_VERSION_MAJOR}
       VERSION ${libphonenumber_VERSION_MAJOR}.${libphonenumber_VERSION_MINOR})
 endif ()
@@ -350,7 +350,7 @@ if (BUILD_SHARED_LIB)
   set_target_properties (phonenumber-shared
     PROPERTIES
       OUTPUT_NAME "phonenumber"
-      PREFIX "lib"
+      PREFIX ${LIB_INSTALL_DIR}
       SOVERSION ${libphonenumber_VERSION_MAJOR}
       VERSION ${libphonenumber_VERSION_MAJOR}.${libphonenumber_VERSION_MINOR})
 endif ()
