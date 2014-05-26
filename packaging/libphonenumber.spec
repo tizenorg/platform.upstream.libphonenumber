@@ -36,7 +36,7 @@ the Android framework since 4.0 (Ice Cream Sandwich).
 %setup -q -n libphonenumber
 
 %build
-cmake -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=%{_prefix} cpp
+cmake -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_INSTALL_LIBDIR=%{_libdir} cpp
 
 # Parallel builds are broken and/or not supported by upstream, don't
 # use them. The generated Makefile lacks the geocoding_data.cc ->
