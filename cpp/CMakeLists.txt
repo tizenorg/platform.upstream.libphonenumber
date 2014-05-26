@@ -20,6 +20,8 @@ project (libphonenumber)
 set (libphonenumber_VERSION_MAJOR 7)
 set (libphonenumber_VERSION_MINOR 0)
 
+include ( GNUInstallDirs )
+
 # Helper functions dealing with finding libraries and programs this library
 # depends on.
 
@@ -554,17 +556,17 @@ install (FILES
 install (FILES "src/phonenumbers/base/synchronization/lock.h"
          DESTINATION include/phonenumbers/base/synchronization/)
 
-install (TARGETS phonenumber LIBRARY DESTINATION lib/ ARCHIVE DESTINATION lib/)
+install (TARGETS phonenumber LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 if (BUILD_SHARED_LIB)
-  install (TARGETS phonenumber-shared LIBRARY DESTINATION lib/ ARCHIVE
-           DESTINATION lib/)
+  install (TARGETS phonenumber-shared LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE
+           DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif ()
 
 if (${BUILD_GEOCODER} STREQUAL "ON")
-  install (TARGETS geocoding LIBRARY DESTINATION lib/ ARCHIVE DESTINATION lib/)
-  install (TARGETS geocoding-shared LIBRARY DESTINATION lib/ ARCHIVE
-           DESTINATION lib/)
+  install (TARGETS geocoding LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+  install (TARGETS geocoding-shared LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE
+           DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif ()
 
 # Build an example program using geocoding, mainly to make sure that both
