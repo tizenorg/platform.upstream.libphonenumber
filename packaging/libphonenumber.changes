@@ -1,3 +1,7 @@
+* Tue Sep 16 2014 Patrick Ohly <patrick.ohly@intel.com> 3265a70
+- gbs.conf: fix upstream branch name
+- rebase to 6.2.2
+
 * Tue Nov 05 2013 Patrick Ohly <patrick.ohly@intel.com> accepted/tizen/20130915.152958@ab8509e
 - disable parallel builds
 
