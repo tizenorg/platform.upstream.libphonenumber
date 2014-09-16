@@ -1,5 +1,5 @@
 Name:           libphonenumber
-Version:        5.3.2
+Version:        6.2.2
 Release:        1
 License:        Apache-2.0
 Summary:        A library for manipulating international phone numbers
@@ -57,14 +57,13 @@ rm %{buildroot}/%{_libdir}/*.a
 %defattr(-, root, root, -)
 %doc AUTHORS
 %license LICENSE
-%{_libdir}/libphonenumber.so.5
-%{_libdir}/libphonenumber.so.5.3
-%{_libdir}/libgeocoding.so.5
-%{_libdir}/libgeocoding.so.5.3
+%{_libdir}/libphonenumber.so.6
+%{_libdir}/libphonenumber.so.6.2
+%{_libdir}/libgeocoding.so.6
+%{_libdir}/libgeocoding.so.6.2
 
 %files devel
 %defattr(-, root, root, -)
 %{_includedir}/phonenumbers
-%{_includedir}/base
 %{_libdir}/libphonenumber.so
 %{_libdir}/libgeocoding.so
