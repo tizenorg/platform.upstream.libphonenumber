@@ -47,6 +47,8 @@ cmake -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_INSTALL_LI
 %install
 %{__make} DESTDIR=%{buildroot} install
 rm %{buildroot}/%{_libdir}/*.a
+# The dependecy of Header has lock_posix.h but lock_posix.h doesn't include in result.
+cp cpp/src/phonenumbers/base/synchronization/lock_posix.h %{buildroot}/%{_includedir}/phonenumbers/base/synchronization/
 
 %post   -n libphonenumber -p /sbin/ldconfig
 
