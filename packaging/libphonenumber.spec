@@ -6,6 +6,11 @@ Summary:        A library for manipulating international phone numbers
 Url:            http://code.google.com/p/libphonenumber/
 Group:          Social & Content/Libraries
 Source:         libphonenumber-%{version}.tgz
+
+%if "%{?tizen_profile_name}" == "tv"
+ExcludeArch: %{arm} %ix86 x86_64
+%endif
+
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
 BuildRequires:  gtest-devel
