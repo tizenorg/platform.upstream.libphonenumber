@@ -1,7 +1,7 @@
 Name:           libphonenumber
 Version:        7.0.6
 Release:        1
-License:        Apache-2.0
+License:        Apache-2.0 and BSD-2.0
 Summary:        A library for manipulating international phone numbers
 Url:            http://code.google.com/p/libphonenumber/
 Group:          Social & Content/Libraries
