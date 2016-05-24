@@ -11,7 +11,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  cmake
 BuildRequires:  gtest-devel
 BuildRequires:  re2-devel
-BuildRequires:  protobuf-devel
+BuildRequires:  pkgconfig(protobuf-lite)
 BuildRequires:  boost-devel
 BuildRequires:  pkgconfig(icu-i18n)
 
